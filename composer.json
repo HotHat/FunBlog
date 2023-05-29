@@ -20,6 +20,7 @@
         "laminas/laminas-diactoros": "^3.0",
         "middlewares/fast-route": "^2.0",
         "middlewares/request-handler": "^2.0",
-        "narrowspark/http-emitter": "^2.0"
+        "narrowspark/http-emitter": "^2.0",
+        "hothat/query-builder": "^0.0.2"
     }
 }
