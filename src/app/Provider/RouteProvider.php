@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
 
-namespace FunBlog\Provider;
+namespace App\Provider;
 
 
 
-use FunBlog\Controller\WelcomeController;
+use App\Controller\WelcomeController;
 
 class RouteProvider extends ServiceProvider
 {

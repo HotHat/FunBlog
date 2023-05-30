@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
 
-namespace FunBlog;
+namespace App\Middleware;
 
 
 use Psr\Http\Message\ResponseInterface;

@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
 
-namespace FunBlog\Provider;
+namespace App\Provider;
 
 
 use DI\Container;

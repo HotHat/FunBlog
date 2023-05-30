@@ -1,6 +1,6 @@
 <?php
 
-namespace FunBlog\Utils;
+namespace App\Utils;
 
 /**
  * Parser

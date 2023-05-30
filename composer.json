@@ -3,7 +3,7 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "FunBlog\\": "src/"
+            "App\\": "src/app"
         }
     },
     "authors": [
@@ -21,6 +21,7 @@
         "middlewares/fast-route": "^2.0",
         "middlewares/request-handler": "^2.0",
         "narrowspark/http-emitter": "^2.0",
-        "hothat/query-builder": "^0.0.2"
+        "hothat/query-builder": "^0.0.2",
+        "twig/twig": "^3.0"
     }
 }

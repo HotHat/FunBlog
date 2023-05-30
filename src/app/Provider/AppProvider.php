@@ -1,10 +1,13 @@
 <?php declare(strict_types=1);
 
 
-namespace FunBlog\Provider;
+namespace App\Provider;
 
 
-use FunBlog\Controller\WelcomeController;
+use App\Controller\WelcomeController;
+use App\Facades\Facade;
+use QueryBuilder\Builder;
+use QueryBuilder\MysqlConnection;
 use function DI\create;
 
 class AppProvider extends ServiceProvider
@@ -35,6 +38,25 @@ class AppProvider extends ServiceProvider
     
             $this->container->set($controller, create($controller));
         }
+        
+        // database
+        $connection = new MysqlConnection(
+            'mysql',
+            3306,
+            'xapp',
+            'root',
+            '123456'
+        );
+    
+        $this->container->set('connection', $connection);
+        
+        $builder = new Builder($connection);
+        $this->container->set('query-builder', $builder);
+        
+        
+        // facades
+        Facade::setFacadeApplication($this->container);
+    
     }
     
     

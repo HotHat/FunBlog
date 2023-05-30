@@ -1,21 +1,18 @@
 <?php declare(strict_types=1);
 
+namespace App;
 
-namespace FunBlog;
-
-
+use App\Middleware\FooMiddleware;
 use DI\Container;
 use DI\ContainerBuilder;
-use ErrorException;
 use FastRoute\Dispatcher\GroupCountBased;
-use FunBlog\Provider\AppProvider;
-use FunBlog\Provider\RouteProvider;
+use App\Provider\AppProvider;
+use App\Provider\RouteProvider;
 use Laminas\Diactoros\ServerRequestFactory;
 use Middlewares\FastRoute;
 use Middlewares\RequestHandler;
 use Narrowspark\HttpEmitter\SapiEmitter;
 use Relay\Relay;
-use Throwable;
 
 class Application
 {
@@ -34,12 +31,21 @@ class Application
     }
     
     protected function init() {
+        $this->setBasePath();
+        
         $this->initException();
         
         $this->initProvider();
         
         $this->addMiddleware();
         
+    }
+    
+    protected function setBasePath() {
+        $this->container->set('path', __DIR__);
+        $this->container->set('path.public', __DIR__ . DIRECTORY_SEPARATOR);
+        $this->container->set('path.resources', __DIR__ . DIRECTORY_SEPARATOR);
+        $this->container->set('path.views', __DIR__ . DIRECTORY_SEPARATOR);
     }
     
     
