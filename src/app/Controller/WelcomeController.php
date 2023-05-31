@@ -27,7 +27,7 @@ class WelcomeController
         // ]);
         //
         // echo $twig->render('index.html', ['name' => 'Fabien']);
-        return view('temp.html', ['hello' => 'Hello World!']);
+        return view('movie/index.html', ['hello' => 'Hello World!']);
     }
 
 }

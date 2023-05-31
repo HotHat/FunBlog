@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link type="text/css" rel="stylesheet" href="/asset/css/bootstrap.min.css" />
+        <link type="text/css" href="/asset/css/bootstrap-utilities.min.css" />
+        <script src="/asset/js/bootstrap.min.js" ></script>
+        <style>
+            :root{
+
+                --vc-nav-width: 65px;
+                --vc-nav-height: 65px;
+                --vc-nav-color-hover: rgb(141, 141, 141);
+            }
+
+            html {
+                /*background-color: black;*/
+            }
+
+            .content {
+                display: flex;
+                align-content: center;
+                flex-direction: column;
+                margin-bottom: 15px;
+
+                background-color: black;
+            }
+
+            .movie-head {
+                /*width: 100%;*/
+                width:300px;
+                height:350px;
+            }
+
+            .movie-blk {
+                display: flex;
+                align-content: center;
+                flex-direction: column;
+            }
+            .movie-blk a {
+                text-align:center;
+                display: flex;
+                flex-direction: column;
+                color: white;
+            }
+            .movie-blk a:hover {
+                color: rgb(141, 141, 141);
+            }
+            .movie-blk img {
+                width: 360px;
+                padding: 15px;
+                border-radius: 25px;
+                margin: 0 auto;
+            }
+            span {
+                margin-top:0;
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="content">
+        <div class="movie-head">
+            <div id="myCarousel" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://img9.doubanio.com/view/photo/l_ratio_poster/public/p2889865405.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img9.doubanio.com/view/photo/l_ratio_poster/public/p2889865405.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img9.doubanio.com/view/photo/l_ratio_poster/public/p2889865405.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col-12 col-lg-4 col-sm-6">
+                    <div class="movie-blk">
+                        <a>
+                            <img  />
+                            <span></span>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="footer" id="page-mark">
+
+        </div>
+    </div>
+    </body>
+
+    <script>
+        const myCarouselElement = document.querySelector('#myCarousel')
+
+        const carousel = new bootstrap.Carousel(myCarouselElement, {
+            interval: 5000,
+            touch: true,
+            ride: "carousel"
+        })
+    </script>
+
+</html>
+

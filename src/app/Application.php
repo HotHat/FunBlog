@@ -171,7 +171,7 @@ class Application implements ContainerInterface
         $loader = new \Twig\Loader\FilesystemLoader($this->container->get('path.views'));
         $runtime = $this->container->get('path.runtime');
         $twig = new \Twig\Environment($loader, [
-            'cache' => $runtime . '/template',
+            // 'cache' => $runtime . '/template',
         ]);
 
         $this->container->set('template_engine', $twig);
