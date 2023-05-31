@@ -35,6 +35,9 @@ class Application implements ContainerInterface
         $this->container = $builder->build();
 
         $this->init();
+
+        //
+        static::$app = $this;
     }
 
     public static function getInstance() {

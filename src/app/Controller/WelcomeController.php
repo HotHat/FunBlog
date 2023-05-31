@@ -4,7 +4,7 @@
 namespace App\Controller;
 
 
-use App\Facades\Db;
+use App\Facades\DB;
 use Laminas\Diactoros\ServerRequest;
 use function App\Utils\app;
 use function App\Utils\view;

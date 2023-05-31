@@ -4,11 +4,11 @@
 namespace App\Facades;
 
 
-class Db extends Facade
+class DB extends Facade
 {
-    
+
     static function getFacadeAccessor(): string
     {
-        return 'query-builder';
+        return 'db';
     }
 }
