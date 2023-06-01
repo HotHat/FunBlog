@@ -95,58 +95,24 @@
 
         <div class="container">
             <div class="row align-items-start">
+                {% for mv in list %}
                 <div class="col-12 col-lg-4 col-sm-6">
                     <div class="movie-blk">
-                        <a>
-                            <img src="https://img9.doubanio.com/view/photo/l_ratio_poster/public/p2889865405.jpg" />
-                            <span>哈哈只只只</span>
+                        <a href="/movie/detail/{{ mv.site_id }}">
+                            <img src="{{ mv.thumb }}" />
+                            <span>{{ mv.name }}</span>
                         </a>
 
                     </div>
                 </div>
-                <div class="col-12 col-lg-4 col-sm-6">
-                    <div class="movie-blk">
-                        <a>
-                            <img src="https://img9.doubanio.com/view/photo/l_ratio_poster/public/p2889865405.jpg" />
-                            <span>哈哈只只只</span>
-                        </a>
-
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4 col-sm-6">
-                    <div class="movie-blk">
-                        <a>
-                            <img src="https://img9.doubanio.com/view/photo/l_ratio_poster/public/p2889865405.jpg" />
-                            <span>哈哈只只只</span>
-                        </a>
-
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4 col-sm-6">
-                    <div class="movie-blk">
-                        <a>
-                            <img src="https://img9.doubanio.com/view/photo/l_ratio_poster/public/p2889865405.jpg" />
-                            <span>哈哈只只只</span>
-                        </a>
-
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4 col-sm-6">
-                    <div class="movie-blk">
-                        <a>
-                            <img src="https://img9.doubanio.com/view/photo/l_ratio_poster/public/p2889865405.jpg" />
-                            <span>哈哈只只只</span>
-                        </a>
-
-                    </div>
-                </div>
+                {% endfor %}
             </div>
 
 
 
         </div>
         <div class="footer" id="page-mark">
-
+            {{ page | raw }}
         </div>
     </div>
     </body>

@@ -70,7 +70,7 @@ function pagination($current, $pageNum, $listLen, $query) {
     if ($current != 1) {
         $query['page'] = $current - 1;
         $url = http_build_query($query);
-        $html .= '<li class="page-item"><a class="page-link"  aria-label="Previous" href="' . $url.'"><span aria-hidden="true">&laquo;</span></a>';
+        $html .= '<li class="page-item"><a class="page-link"  aria-label="Previous" href="?' . $url.'"><span aria-hidden="true">&laquo;</span></a>';
     }
 
     [$start, $end] = $page;
@@ -78,14 +78,14 @@ function pagination($current, $pageNum, $listLen, $query) {
     for ($i = $start; $i <= $end; ++$i) {
         $query['page'] = $i;
         $url = http_build_query($query);
-        $html .= '<li class="page-item ' . ($i == $current ? 'active' : '') . ' "><a class="page-link" href="'. $url .'">' . $i .'</a> </li>';
+        $html .= '<li class="page-item ' . ($i == $current ? 'active' : '') . ' "><a class="page-link" href="?'. $url .'">' . $i .'</a> </li>';
     }
 
     if ($current != $pageNum) {
         $query['page'] = $current + 1;
         $url = http_build_query($query);
 
-        $html .= '<li class="page-item"><a class="page-link" aria-label="Next" href="' . $url . '"><span aria-hidden="true">&raquo;</span></a>';
+        $html .= '<li class="page-item"><a class="page-link" aria-label="Next" href="?    ' . $url . '"><span aria-hidden="true">&raquo;</span></a>';
     }
 
     $html .= '</ul></nav>';

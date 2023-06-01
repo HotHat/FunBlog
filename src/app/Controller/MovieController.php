@@ -12,9 +12,26 @@ use function App\Utils\view;
 
 class MovieController
 {
-    public function index() {
+    public function index(ServerRequest $request) {
+        $req = $request->getQueryParams();
+        $page = intval($req['page'] ?? 1);
 
-        return view('movie/index.html', ['nav' => '']);
+        $offset = ($page - 1) * 15;
+
+        $cnt = DB::table('movie')->count()->first();
+
+        $count = $cnt['count'];
+        // var_dump($count);die(0);
+
+        $data = DB::table('movie')
+            ->limit($offset, 15)
+            ->orderBy('id', 'DESC')
+            ->get();
+
+        $page =  pagination($page, $count,  5, $req);
+
+
+        return view('movie/index.html', ['list' => $data, 'page' => $page ]);
     }
 
     public function nav(ServerRequest $request) {
