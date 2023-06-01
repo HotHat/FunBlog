@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link type="text/css" rel="stylesheet" href="/asset/css/bootstrap.min.css" />
+        <link type="text/css" href="/asset/css/bootstrap-utilities.min.css" />
+        <script src="/asset/js/bootstrap.min.js" ></script>
+
+    </head>
+    <body>
+    {% for nv in nav %}
+     {{ nv|raw }}
+    {% endfor %}
+    </body>
+
+    <script>
+        const myCarouselElement = document.querySelector('#myCarousel')
+
+        const carousel = new bootstrap.Carousel(myCarouselElement, {
+            interval: 5000,
+            touch: true,
+            ride: "carousel"
+        })
+    </script>
+
+</html>
+
