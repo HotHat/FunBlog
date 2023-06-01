@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b35d171349bff59545b31c1e1fe786f3",
+    "content-hash": "ed8dd173cbe5d09b4461b72c5c94a514",
     "packages": [
         {
             "name": "hothat/query-builder",
-            "version": "v0.0.2",
+            "version": "v0.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/HotHat/QueryBuilder.git",
-                "reference": "0df21034a2caafce22fdfc54a978a3dfb354a4d0"
+                "reference": "77e396b17755ef8e1471cddf5a43e9ab224df25f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/HotHat/QueryBuilder/zipball/0df21034a2caafce22fdfc54a978a3dfb354a4d0",
-                "reference": "0df21034a2caafce22fdfc54a978a3dfb354a4d0",
+                "url": "https://api.github.com/repos/HotHat/QueryBuilder/zipball/77e396b17755ef8e1471cddf5a43e9ab224df25f",
+                "reference": "77e396b17755ef8e1471cddf5a43e9ab224df25f",
                 "shasum": ""
             },
             "require": {
@@ -42,9 +42,9 @@
             ],
             "support": {
                 "issues": "https://github.com/HotHat/QueryBuilder/issues",
-                "source": "https://github.com/HotHat/QueryBuilder/tree/v0.0.2"
+                "source": "https://github.com/HotHat/QueryBuilder/tree/v0.0.3"
             },
-            "time": "2023-05-29T12:36:16+00:00"
+            "time": "2023-06-01T12:12:51+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",
@@ -2951,7 +2951,9 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": "^8.1"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
 }
