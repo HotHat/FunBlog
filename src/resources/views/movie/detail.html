@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link type="text/css" rel="stylesheet" href="/asset/css/bootstrap.min.css" />
+        <script src="/asset/js/bootstrap.min.js" ></script>
+        <style>
+            :root{
+
+                --vc-nav-width: 65px;
+                --vc-nav-height: 65px;
+                --vc-nav-color-hover: rgb(141, 141, 141);
+            }
+
+            html {
+                background-color: black;
+            }
+
+            .content {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin-bottom: 15px;
+
+                background-color: black;
+                color: white;
+            }
+            h1, h2{
+                text-align: center;
+            }
+
+            pre {
+                display: block;
+                margin-top: 0;
+                margin-bottom: 1rem;
+                overflow: auto;
+                font-size: .875em;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+
+        </style>
+    </head>
+    <body>
+    <div class="content">
+
+        <div class="container py-4 px-3 mx-auto"><h1>{{ movie.name }}</h1><h2>{{ movie.updated_at }} </h2></div>
+
+        <figure class="figure">
+            <img src="{{ movie.thumb }}" class="figure-img img-fluid rounded" alt="...">
+        </figure>
+
+        <div class="container">
+            <pre> {{ movie.intro }} </pre>
+            <p><a href="{{ movie.download_url }}">下载链接</a></p></div>
+    </div>
+
+    </body>
+
+    <script>
+        const myCarouselElement = document.querySelector('#myCarousel')
+
+        const carousel = new bootstrap.Carousel(myCarouselElement, {
+            interval: 5000,
+            touch: true,
+            ride: "carousel"
+        })
+    </script>
+
+</html>
+

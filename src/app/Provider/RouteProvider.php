@@ -18,6 +18,7 @@ class RouteProvider extends ServiceProvider
 
         // movie
         $route->get('/movie/index', [MovieController::class, 'index']);
+        $route->get('/movie/detail', [MovieController::class, 'detail']);
         $route->get('/movie/nav', [MovieController::class, 'nav']);
     }
 

@@ -14,9 +14,6 @@ use function DI\create;
 
 class AppProvider extends ServiceProvider
 {
-    protected array $controllers = [
-        WelcomeController::class
-    ];
 
     private function initController() {
         $base = $this->container->get('path');

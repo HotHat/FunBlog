@@ -92,3 +92,9 @@ function pagination($current, $pageNum, $listLen, $query) {
 
     return $html;
 }
+
+
+function http_404() {
+    header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
+    exit(0);
+}

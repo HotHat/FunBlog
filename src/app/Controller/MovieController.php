@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Facades\DB;
 use Laminas\Diactoros\ServerRequest;
 use function App\Utils\app;
+use function App\Utils\http_404;
 use function App\Utils\pagination;
 use function App\Utils\view;
 
@@ -14,6 +15,8 @@ class MovieController
 {
     public function index(ServerRequest $request) {
         $req = $request->getQueryParams();
+        $keywords = $req['keywords'] ?? '';
+
         $page = intval($req['page'] ?? 1);
 
         $offset = ($page - 1) * 15;
@@ -23,15 +26,36 @@ class MovieController
         $count = $cnt['count'];
         // var_dump($count);die(0);
 
-        $data = DB::table('movie')
+        $query = DB::table('movie')
             ->limit($offset, 15)
-            ->orderBy('id', 'DESC')
-            ->get();
+            ->orderBy('id', 'DESC');
+
+        if ($keywords) {
+            $query->where('name', 'LIKE', '%' . $keywords . '%');
+        }
+
+        $data = $query->get();
 
         $page =  pagination($page, $count,  5, $req);
 
 
-        return view('movie/index.html', ['list' => $data, 'page' => $page ]);
+        return view('movie/index.html', ['list' => $data, 'page' => $page, 'keywords' => $keywords ]);
+    }
+
+    public function detail(ServerRequest $request) {
+        $req = $request->getQueryParams();
+
+        $id = $req['id'];
+
+        $movie = DB::table('movie')
+            ->where('site_id', $id)
+            ->first();
+
+        if (empty($movie)) {
+           http_404();
+        }
+
+        return view('movie/detail.html', ['movie' => $movie]);
     }
 
     public function nav(ServerRequest $request) {
