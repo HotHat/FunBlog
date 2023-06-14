@@ -4,7 +4,9 @@
 namespace App\Provider;
 
 
+use App\Utils\HyperDown;
 use DI\Container;
+use function DI\create;
 
 class ServiceProvider
 {
@@ -16,7 +18,8 @@ class ServiceProvider
     }
     
     public function register() {
-    
+        // Markdown parser
+        $this->container->set('markdown', create(HyperDown::class));
     }
     
 }

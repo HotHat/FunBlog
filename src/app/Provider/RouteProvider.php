@@ -7,6 +7,7 @@ namespace App\Provider;
 
 use App\Controller\MovieController;
 use App\Controller\WelcomeController;
+use App\Controller\BlogController;
 
 class RouteProvider extends ServiceProvider
 {
@@ -19,7 +20,11 @@ class RouteProvider extends ServiceProvider
         // movie
         $route->get('/movie/index', [MovieController::class, 'index']);
         $route->get('/movie/detail', [MovieController::class, 'detail']);
-        $route->get('/movie/nav', [MovieController::class, 'nav']);
+       // $route->get('/movie/nav', [MovieController::class, 'nav']);
+
+        // blog
+        $route->get('/blog/index', [BlogController::class, 'index']);
+        $route->get('/blog/detail', [BlogController::class, 'detail']);
     }
 
 }

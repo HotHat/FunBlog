@@ -52,7 +52,7 @@ class MovieController
             ->first();
 
         if (empty($movie)) {
-           http_404();
+           return http_404();
         }
 
         return view('movie/detail.html', ['movie' => $movie]);

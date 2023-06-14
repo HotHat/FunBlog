@@ -5,6 +5,8 @@ namespace App\Utils;
 
 
 use App\Application;
+use Laminas\Diactoros\Response\TextResponse;
+use Psr\Http\Message\ResponseInterface;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 
@@ -94,7 +96,6 @@ function pagination($current, $pageNum, $listLen, $query) {
 }
 
 
-function http_404() {
-    header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
-    exit(0);
+function http_404(): ResponseInterface {
+    return new TextResponse('', 404);
 }

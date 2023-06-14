@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Middleware\FooMiddleware;
+use App\Provider\ServiceProvider;
 use DI\Container;
 use DI\ContainerBuilder;
 use ErrorException;
@@ -75,6 +76,7 @@ class Application implements ContainerInterface
         $providers = [
             AppProvider::class,
             RouteProvider::class,
+            ServiceProvider::class,
         ];
 
         foreach ($providers as $provider) {
